@@ -3,7 +3,6 @@
 Helpful tips and files for git
 
 ## Git Basics
-
 The first command used to initialize the project, executed in the root working directory of the
 project:
 ```bash
@@ -32,8 +31,21 @@ Gives a record of your commits:
   $ git log
 ```
 
-## Remote Repositories
+## Configuration
+Change the default editor:
+```bash
+  $ git config --global core.editor "nano"
+  # or
+  $ git config --global core.editor "vim"
+```
 
+Set user name and email:
+```bash
+ $ git config --global user.name "username"
+ $ git config --global user.email "user@email.com"
+```
+
+## Remote Repositories
 This is how you check to see what remote repositories are associated with your local repo:
 ```bash
   $ git remote -v
@@ -71,7 +83,6 @@ should be listed in your `.gitignore` as well):
 ```
 
 ## Git Branches
-
 List all of the branches in your repo. Add a `<branch>` argument to create a new branch with the
 name `<branch>`:
 ```bash
@@ -91,7 +102,6 @@ Merge `<branch>` into the current branch:
 ```
 
 ## Rename a Local Branch and a Remote Branch
-
 Rename the branch locally:
 ```bash
   $ git branch -m <old branch> <new branch>
@@ -108,7 +118,6 @@ Push the new branch, set the local branch to track the new remote branch:
 ```
 
 ## Fetch a remote branch and set as a local branch
-
 First fetch the branch from your repository:
 ```bash
   $ git fetch origin <remote branch>
