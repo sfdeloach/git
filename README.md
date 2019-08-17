@@ -51,15 +51,31 @@ This is how you check to see what remote repositories are associated with your l
   $ git remote -v
 ```
 
-This is how to connect the working directory on your machine with the repository on github, a
-one-time setup command:
+This is how to connect the working directory on your machine with the repository on github, using
+https. This is a one-time setup command but will require a username and password each time a push
+is made:
 ```bash
   $ git remote add origin https://github.com/sfdeloach/c-prog-solutions.git
+                   ^ (this will be the local name of the remote repository)
+```
+
+A SSH connection take a bit more setup but provides a faster way to push your code. Start by
+generating a new key pair on your local machine, then pasting the public key on github.com:
+
+```bash
+  $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
+
+Once SSH is setup, pushing code will not require a username and password:
+
+```bash
+  $ git remote add origin git@github.com:sfdeloach/c-prog-solutions.git
 ```
 
 This will push all staged files to the repository:
 ```bash
   $ git push origin master
+                    ^ (the branch being pushed to)
 ```
 
 This will pull all files from the repository to your working local directory:
