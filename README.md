@@ -56,7 +56,7 @@ https. This is a one-time setup command but will require a username and password
 is made:
 ```bash
   $ git remote add origin https://github.com/sfdeloach/c-prog-solutions.git
-                   ^ (this will be the local name of the remote repository)
+                   ^ (this will be the name of the remote repository)
 ```
 
 A SSH connection take a bit more setup but provides a faster way to push your code. Start by
@@ -142,4 +142,12 @@ First fetch the branch from your repository:
 Then set your local branch to track changes made on the remote branch:
 ```bash
   $ git checkout --track origin/<remote branch>
+```
+
+## Replace a local branch with a remote branch entirely
+This will replace all local files with the files from the remote branch. Be absolutely
+sure that you have checked out the correct branch before performing this operation.
+```bash
+  $ git reset --hard origin/master
+                     ^ (in this case, the local branch is master)
 ```
